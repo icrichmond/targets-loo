@@ -1,0 +1,26 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  echo = FALSE
+)
+```
+
+# Sample size in Bayesian "ANOVA"
+
+How likely are we to find group differences?
+
+```{r cars}
+library(targets)
+```
+
+```{r}
+tar_read(power_fig)
+```
+
