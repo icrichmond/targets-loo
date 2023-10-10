@@ -12,6 +12,9 @@ compare_two_models_loo <- function(model1,
 
   m1_loo <- m1_samples$loo()
   # targets::tar_load(some_groups)
+  # NOTE: try not to call tar_load() within functions, can result in some wonkiness
+  # i.e., the workflow doesn't necessarily know to build some_groups() first if its called within the function
+  # call in function parameters to avoid issues
   m2_samples <- model2$sample(data = sim_data, refresh=0L)
   m2_loo <- m2_samples$loo()
   # simulate_normal(50)
