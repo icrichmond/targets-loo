@@ -55,7 +55,7 @@ list(
     data = simulate_normal_group(n_per_group = 10, J = 10),
     quiet = TRUE
   ),
-  tarchetypes::tar_map_rep(
+  tar_map_rep(
     increase_group_reps,
     command = compare_two_models_loo(
       model1 = no_groups,
@@ -74,7 +74,7 @@ list(
       ggplot(aes(x = n_per_group, y = elpd_diff)) + geom_point() +
       facet_wrap(~J)
   ),
-  tarchetypes::tar_render(
+  tar_render(
     readme,
     path = "README.Rmd"
   )
