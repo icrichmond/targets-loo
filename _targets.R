@@ -7,6 +7,8 @@ library(targets)
 # Then, run tar_make() to run the pipeline
 # and tar_read(summary) to view the results.
 
+# Options -----------------------------------------------------------------
+
 # Define custom functions and other global objects.
 # This is where you write source(\"R/functions.R\")
 # if you keep your functions in external scripts.
@@ -19,10 +21,23 @@ tar_option_set(seed = 3)
 # tar_option_set(packages = c("dplyr", "ggplot2"))
 # moved packages to script in R/ (can add conflicted, etc.)
 
+
+# Renv --------------------------------------------------------------------
+
+#activate()
+#snapshot()
+#restore()
+
+
+# Variables ---------------------------------------------------------------
+
 data_values <- expand.grid(
   n_per_group = c(1, 3, 5, 10, 15),
   J = c(3, 10, 20)) |>
   mutate(sim_id = paste0("sim", 1:length(n_per_group)))
+
+
+# Targets: all ------------------------------------------------------------
 
 # End this file with a list of target objects.
 list(
