@@ -11,7 +11,9 @@ library(dplyr)
 # Define custom functions and other global objects.
 # This is where you write source(\"R/functions.R\")
 # if you keep your functions in external scripts.
-source("functions.R")
+# source("functions.R")
+# use tar_source() to source an entire folder, so you can save individual functions separately
+tar_source('R')
 tar_option_set(seed = 3)
 
 # Set target-specific options such as packages.
