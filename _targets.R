@@ -1,6 +1,5 @@
 library(targets)
-library(stantargets)
-library(dplyr)
+
 # This is an example _targets.R file. Every
 # {targets} pipeline needs one.
 # Use tar_script() to create _targets.R and tar_edit()
@@ -17,7 +16,8 @@ tar_source('R')
 tar_option_set(seed = 3)
 
 # Set target-specific options such as packages.
-tar_option_set(packages = c("dplyr", "ggplot2"))
+# tar_option_set(packages = c("dplyr", "ggplot2"))
+# moved packages to script in R/ (can add conflicted, etc.)
 
 data_values <- expand.grid(
   n_per_group = c(1, 3, 5, 10, 15),
