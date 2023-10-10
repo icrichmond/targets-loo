@@ -7,6 +7,7 @@ library(quarto)
 library(conflicted)
 
 library(stantargets)
+library(loo)
 
 library(dplyr)
 library(ggplot2)
