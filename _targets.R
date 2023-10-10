@@ -61,7 +61,8 @@ list(
       model1 = no_groups,
       model2 = some_groups,
       names = c("no_groups", "some_groups"),
-      n_per_group = n_per_group, J = J),
+      n_per_group = n_per_group,
+      J = J),
     values = data_values,
     batches = 2,
     reps = 4,
@@ -77,5 +78,16 @@ list(
   tar_render(
     readme,
     path = "README.Rmd"
-  )
+  )#,
+
+  # BELLA ADDITION: MAY NOT BE CORRECT
+  #tar_eval(
+  #  tar_target(comparisons,
+  #             compare_two_models_loo(no_groups, some_groups, data = simulate_normal_group(15, 1))
+  #)
+
 )
+
+# NOTE: if you have many targets and the list at the end of the targets file is getting messy (e.g., if you were also doing data cleaning here,
+# you can split them into scripts and just call them by name. example: https://github.com/icrichmond/ParkLegacies/blob/main/_targets.R)
+# (this list looks great though)
