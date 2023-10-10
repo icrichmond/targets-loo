@@ -78,13 +78,9 @@ list(
   tar_render(
     readme,
     path = "README.Rmd"
-  )#,
+  )
 
-  # BELLA ADDITION: MAY NOT BE CORRECT
-  #tar_eval(
-  #  tar_target(comparisons,
-  #             compare_two_models_loo(no_groups, some_groups, data = simulate_normal_group(15, 1))
-  #)
+
 
 )
 
